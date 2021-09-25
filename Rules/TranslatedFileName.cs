@@ -9,7 +9,7 @@ namespace RepoLint.Rules
 
 		static TranslatedFileName()
 		{
-			moduleNames = Repository.Modules.ConvertAll(module => module.FileName ?? module.Name);
+			moduleNames = Repository.Modules?.ConvertAll(module => module.FileName ?? module.Name);
 		}
 
 		static readonly List<string> moduleNames;

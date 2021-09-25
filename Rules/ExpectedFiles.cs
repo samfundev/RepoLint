@@ -10,7 +10,7 @@ namespace RepoLint.Rules
 
 		static ExpectedFiles()
 		{
-			moduleNames = Repository.Modules.ConvertAll(module => module.Name);
+			moduleNames = Repository.Modules?.ConvertAll(module => module.Name);
 		}
 
 		static readonly List<string> moduleNames;
