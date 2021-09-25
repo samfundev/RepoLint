@@ -19,7 +19,7 @@ static class Repository
 		}
 		catch
 		{
-			Console.Error.WriteLine("Failed to load the repository.");
+			Console.WriteLine("Failed to load the repository. Some rules will not work.");
 		}
 	}
 
