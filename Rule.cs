@@ -74,7 +74,8 @@ namespace RepoLint
 				return;
 			}
 
-			GroupedProblems.Add(new GroupedProblem() {
+			GroupedProblems.Add(new GroupedProblem()
+			{
 				Problem = problem,
 				Start = lineNumber,
 				End = lineNumber

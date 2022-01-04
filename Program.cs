@@ -10,10 +10,10 @@ using SharpCompress.Common;
 namespace RepoLint
 {
 	internal static class Program
-    {
+	{
 		private static void Main(string[] args)
-        {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+		{
+			Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 			var treatAsRepo = args.Any(arg => arg == "--repo");
 			args = args.Where(arg => arg != "--repo").ToArray();
@@ -38,7 +38,7 @@ namespace RepoLint
 
 			Console.Error.WriteLine("Pass either the repo or file to scan.");
 			Environment.ExitCode = 2;
-        }
+		}
 
 		private static void ScanArchive(string archivePath)
 		{
@@ -57,7 +57,8 @@ namespace RepoLint
 
 				foreach (var entry in entries)
 				{
-					entry.WriteToDirectory(destDirectory, new ExtractionOptions() {
+					entry.WriteToDirectory(destDirectory, new ExtractionOptions()
+					{
 						Overwrite = true,
 						ExtractFullPath = true
 					});
@@ -80,8 +81,8 @@ namespace RepoLint
 		private static readonly string[] Folders = new[] { "HTML", "JSON" };
 		private static void ScanRepo(string repoDir)
 		{
-            foreach (var folder in Folders)
-            {
+			foreach (var folder in Folders)
+			{
 				var newPath = Path.Combine(repoDir, folder);
 				if (!Directory.Exists(newPath))
 				{
@@ -89,12 +90,12 @@ namespace RepoLint
 					continue;
 				}
 
-                LintDirectory(newPath, GetRules(new[] { "FourIndentHTML", "W3CValidator" }), rootPath: repoDir);
-            }
+				LintDirectory(newPath, GetRules(new[] { "FourIndentHTML", "W3CValidator" }), rootPath: repoDir);
+			}
 		}
 
-        private static void LintDirectory(string path, Rule[] rules, string rootPath = null)
-        {
+		private static void LintDirectory(string path, Rule[] rules, string rootPath = null)
+		{
 			if (rootPath == null)
 				rootPath = path;
 
@@ -105,11 +106,11 @@ namespace RepoLint
 				return;
 			}
 
-            foreach (string file in Directory.GetFiles(path, "*.*", SearchOption.AllDirectories))
-            {
-                ScanFile(file, rules, rootPath);
-            }
-        }
+			foreach (string file in Directory.GetFiles(path, "*.*", SearchOption.AllDirectories))
+			{
+				ScanFile(file, rules, rootPath);
+			}
+		}
 
 		private static void ScanFile(string file, Rule[] rules, string rootPath, bool singleFile = false)
 		{
@@ -149,5 +150,5 @@ namespace RepoLint
 				.Where(type => typeof(Rule).IsAssignableFrom(type) && !type.IsAbstract && ruleFilter(type.Name))
 				.Select(type => (Rule) Activator.CreateInstance(type))
 				.ToArray();
-    }
+	}
 }
