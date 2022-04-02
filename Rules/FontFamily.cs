@@ -1,13 +1,13 @@
 using System;
-using AngleSharp.Dom;
-using AngleSharp.Css.Dom;
 using System.Linq;
+using AngleSharp.Css.Dom;
+using AngleSharp.Dom;
 
 namespace RepoLint.Rules
 {
 	internal class FontFamily : ComplexHTMLRule
 	{
-		private static readonly string[] genericFonts = { "serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "inherit" };
+		private static readonly string[] genericFonts = { "serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "inherit", "Special Elite" };
 
 		protected override void HTML(IDocument document)
 		{
