@@ -16,7 +16,9 @@ namespace RepoLint.Rules
 			"This document appears to be written in *. Consider adding “lang=\"*\"” (or variant) to the “html” start tag.",
 			"Bad value “*” for attribute “src” on element “img”: Illegal character in path segment: space is not allowed.",
 			"An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
-			"A table row was * columns wide, which is less than the column count established by the first row (*)."
+			"A table row was * columns wide, which is less than the column count established by the first row (*).",
+
+			"CSS: “aspect-ratio”: “*” is not a “aspect-ratio” value." // Related issues: https://github.com/w3c/css-validator/issues/366 and https://github.com/w3c/css-validator/issues/287#issuecomment-1011074600
 		};
 
 		protected override void Lint()
