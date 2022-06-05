@@ -17,9 +17,10 @@ static class Repository
 			var jsonString = response.Content.ReadAsStringAsync().Result;
 			Modules = JsonSerializer.Deserialize<WebsiteJSON>(jsonString).KtaneModules;
 		}
-		catch
+		catch (Exception exception)
 		{
 			Console.WriteLine("Failed to load the repository. Some rules will not work.");
+			Console.WriteLine(exception);
 		}
 	}
 
