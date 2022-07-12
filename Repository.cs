@@ -19,8 +19,8 @@ static class Repository
 		}
 		catch (Exception exception)
 		{
-			Console.WriteLine("Failed to load the repository. Some rules will not work.");
-			Console.WriteLine(exception);
+			Console.Error.WriteLine("Failed to load the repository. Some rules will not work.");
+			Console.Error.WriteLine(exception);
 		}
 	}
 
