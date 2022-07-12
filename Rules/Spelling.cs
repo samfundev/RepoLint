@@ -21,7 +21,7 @@ namespace RepoLint.Rules
 
 		protected override void HTML(IDocument document)
 		{
-			if (File.Name.Contains(" translated (") || File.Name.Contains("all languages condensed (")) return;
+			if (File.Name.Contains("translated") || File.Name.Contains("all languages condensed (")) return;
 
 			foreach (var word in Regex.Split(document.Body.TextContent, "[^\\w']+"))
 			{
