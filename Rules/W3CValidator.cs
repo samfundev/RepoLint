@@ -1,20 +1,20 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Reflection;
 
 namespace RepoLint.Rules
 {
 	internal class W3CValidator : Rule
 	{
-		public W3CValidator() : base(".html") {}
+		public W3CValidator() : base(".html") { }
 
 		private readonly string[] ignoredRules = new[] {
 			"Consider adding a “lang” attribute to the “html” start tag to declare the language of this document.",
 			"This document appears to be written in *. Consider adding “lang=\"*\"” (or variant) to the “html” start tag.",
-			"Bad value “*” for attribute “src” on element “img”: Illegal character in path segment: space is not allowed.",
+			"Bad value “*” for attribute “*” on element “*”: Illegal character in path segment: space is not allowed.",
 			"An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.",
 			"A table row was * columns wide, which is less than the column count established by the first row (*).",
 
