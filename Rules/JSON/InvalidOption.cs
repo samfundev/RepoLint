@@ -11,8 +11,8 @@ namespace RepoLint.Rules
 			{ "Type", new[] { "Regular", "Needy", "Holdable", "Widget" } },
 			{ "License", new[] { "OpenSource", "Republishable", "Restricted" } },
 			{ "Compatibility", new[] { "Untested", "Unplayable", "Problematic", "Compatible" } },
-			{ "DefuserDifficulty", new[] { "VeryEasy", "Easy", "Medium", "Hard", "VeryHard" } },
-			{ "ExpertDifficulty", new[] { "VeryEasy", "Easy", "Medium", "Hard", "VeryHard" } },
+			{ "DefuserDifficulty", new[] { "Trivial", "VeryEasy", "Easy", "Medium", "Hard", "VeryHard", "Extreme" } },
+			{ "ExpertDifficulty", new[] { "Trivial", "VeryEasy", "Easy", "Medium", "Hard", "VeryHard", "Extreme" } },
 			{ "RuleSeedSupport", new[] { "NotSupported", "Supported" } },
 			{ "MysteryModule", new[] { "NoConflict", "MustNotBeHidden", "MustNotBeKey", "MustNotBeHiddenOrKey", "RequiresAutoSolve" } }
 		};
