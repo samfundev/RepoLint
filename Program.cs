@@ -57,6 +57,7 @@ namespace RepoLint
 
 				foreach (var entry in entries)
 				{
+					Directory.CreateDirectory(destDirectory);
 					entry.WriteToDirectory(destDirectory, new ExtractionOptions()
 					{
 						Overwrite = true,
